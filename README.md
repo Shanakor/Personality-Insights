@@ -17,17 +17,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 * XCode version that is capable of supporting Swift 4.0
 
-### Install Carthage
-
-IBM's Personality Insights SDK was installed via Carthage. To install it you first have to install Homebrew via `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`. 
-
-Then simply open your terminal in the project folder and run:
-```
-$ brew update
-$ brew install carthage
-$ carthage update --platform iOS
-```
-
 ## Built With
 
 * Twitter-Kit SDK (https://github.com/twitter/twitter-kit-ios)
