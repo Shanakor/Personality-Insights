@@ -13,7 +13,7 @@ import TwitterKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let userDefaults = UserDefaults(suiteName: "productionUserDefaults4")!
+    let userDefaults = UserDefaults(suiteName: "productionUserDefaults5")!
     let coreDataStack = CoreDataStack(modelName: "Model")!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
