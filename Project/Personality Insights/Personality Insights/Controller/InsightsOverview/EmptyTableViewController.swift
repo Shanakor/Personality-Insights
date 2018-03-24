@@ -11,6 +11,13 @@ import TwitterKit
 
 class EmptyTableViewController: UIViewController {
 
+    // MARK: Constants
+
+    struct ButtonColors{
+        static let Enabled = "#7ED321"
+        static let Disabled = "#E3E3E3"
+    }
+
     // MARK: IBOutlets
     
     @IBOutlet weak var startFirstAnalysisButton: UIButton!
@@ -23,5 +30,10 @@ class EmptyTableViewController: UIViewController {
 
     @IBAction func startFirstAnalysis(){
         navigationDelegate?.startAnalysis()
+    }
+
+    func configureUI(isUserLoaded: Bool) {
+        startFirstAnalysisButton.isEnabled = isUserLoaded
+        startFirstAnalysisButton.backgroundColor = isUserLoaded ? UIColor(hex: ButtonColors.Enabled) : UIColor(hex: ButtonColors.Disabled)
     }
 }

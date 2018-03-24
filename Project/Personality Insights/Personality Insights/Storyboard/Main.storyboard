@@ -148,6 +148,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButtonItem" destination="Msg-wU-eaI" id="Gb0-OG-jN9"/>
                         <outlet property="emptyTableContainerView" destination="H8d-rJ-bRq" id="Cn0-fN-HvT"/>
                         <outlet property="tableContainerView" destination="7H5-5Q-knO" id="g2u-6C-bUs"/>
                         <outlet property="userInfoActivityIndicator" destination="zeK-x1-T9g" id="rPw-JQ-LBR"/>
@@ -247,29 +248,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDq-tE-6gg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oP-fq-zkb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="413.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="413.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="x45-VA-LPJ">
-                                                <rect key="frame" x="20" y="60" width="375" height="293.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="0.0" height="293.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Welcome to IBM Personality Insights! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXH-cv-r4F">
-                                                        <rect key="frame" x="167.5" y="0.0" width="300" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launchscreen Image" translatesAutoresizingMaskIntoConstraints="NO" id="sFK-Vb-Lod">
-                                                        <rect key="frame" x="167.5" y="61.5" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="61.5" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="sZg-Rs-jFd"/>
                                                             <constraint firstAttribute="width" constant="120" id="t2m-Gs-Nze"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIz-fk-GOQ">
-                                                        <rect key="frame" x="0.0" y="222.5" width="375" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="222.5" width="0.0" height="0.0"/>
                                                         <string key="text">This app will create your very own personality analysis based on your Twitter Tweets. 
 While this is not very useful in every day life, it sure as heck is very interesting to find out what companies can find out about you  in an instant. 
 If you are curious, head on. There are just a few more steps required to set you up.</string>
@@ -278,7 +279,7 @@ If you are curious, head on. There are just a few more steps required to set y
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHC-v8-D3b">
-                                                        <rect key="frame" x="167.5" y="263.5" width="156" height="30"/>
+                                                        <rect key="frame" x="0.0" y="263.5" width="156" height="30"/>
                                                         <state key="normal" title="I am curious, continue!">
                                                             <color key="titleColor" red="0.49411764705882355" green="0.82745098039215681" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
@@ -333,22 +334,22 @@ If you are curious, head on. There are just a few more steps required to set y
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tX-Fz-egk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHM-MF-lhe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="379"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-KX-bSI">
-                                                <rect key="frame" x="20" y="60" width="335" height="279.5"/>
+                                                <rect key="frame" x="0.0" y="60" width="0.0" height="259"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IBM Watson" translatesAutoresizingMaskIntoConstraints="NO" id="dqh-ht-0up">
-                                                        <rect key="frame" x="55" y="0.0" width="225" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="oY7-pt-bCO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Zc-gK-gFl">
-                                                        <rect key="frame" x="-20" y="161" width="0.0" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="161" width="0.0" height="0.0"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">IBM Watson is an artificial intelligence that was developed by IBM.   It is publicly accessible and will be used by this app for the personality analysis.
 
@@ -358,7 +359,7 @@ We are aware that data protection is very important and so is IBM.   You can
                                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                     </textView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bRy-az-NHf">
-                                                        <rect key="frame" x="88" y="222.5" width="159" height="57"/>
+                                                        <rect key="frame" x="0.0" y="202" width="159" height="57"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-If-1TV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="159" height="27"/>
@@ -830,6 +831,7 @@ We are aware that data protection is very important and so is IBM.   You can
                             <constraint firstAttribute="bottom" secondItem="PNb-xT-8b8" secondAttribute="bottom" id="muy-8a-UWE"/>
                             <constraint firstItem="PNb-xT-8b8" firstAttribute="top" secondItem="WFg-oO-r61" secondAttribute="top" id="vTY-r8-ocr"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="VHl-Xc-foM"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="PNb-xT-8b8" id="zzA-vZ-2r4"/>

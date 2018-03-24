@@ -11,6 +11,11 @@ struct NetworkErrorConstants {
         static let Message = "Something went wrong while download your tweets."
     }
 
+    struct  TweetUserLoading{
+        static let Title = "Tweet Network Error"
+        static let Message = "Something went wrong while loading your user info."
+    }
+
     struct Watson{
         static let Title = "Watson Network Error"
         static let Message = "Something went wrong while feeding Watson."

@@ -25,6 +25,7 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
     @IBOutlet weak var tableContainerView: UIView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userInfoActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     
     // MARK: Properties
 
@@ -32,6 +33,7 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
     private var selectedTransInsight: TransientInsight?
     private var emptyTableViewController: EmptyTableViewController!
     private var tableViewController: InsightsTableViewController!
+    private var isUserLoaded = false
 
     // MARK: Lifecycle
 
@@ -44,6 +46,7 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        configureUI(isUserLoaded: isUserLoaded)
         configureContainerViews()
     }
 
@@ -62,7 +65,7 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
                 user, error in
 
                 guard error == nil else{
-                    print(error!)
+                    self.presentAlertDialogForTweetUserLoadingError(error: error!)
                     return
                 }
 
@@ -70,6 +73,8 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
                 self.userNameLabel.text = self.userName
                 self.userInfoActivityIndicator.stopAnimating()
                 self.userNameLabel.isHidden = false
+                self.isUserLoaded = true
+                self.configureUI(isUserLoaded: self.isUserLoaded)
             }
         }
     }
@@ -79,6 +84,28 @@ class MasterInsightsTableViewController: UIViewController, EmptyTableViewControl
     private func configureUI(areInsightsEmpty: Bool){
         tableContainerView.isHidden = areInsightsEmpty
         emptyTableContainerView.isHidden = !areInsightsEmpty
+    }
+
+    private func configureUI(isUserLoaded: Bool) {
+        addBarButtonItem.isEnabled = isUserLoaded
+
+        emptyTableViewController.configureUI(isUserLoaded: isUserLoaded)
+    }
+
+    // MARK: Error Handling
+
+    private func presentAlertDialogForTweetUserLoadingError(error: Error) {
+        let alertController = UIAlertController(title: NetworkErrorConstants.TweetUserLoading.Title,
+                message: NetworkErrorConstants.TweetUserLoading.Message + "\n\(error.localizedDescription)",
+                preferredStyle: .alert)
+
+        alertController.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+            action in
+
+            self.loadUser()
+        }))
+
+        self.present(alertController, animated: true)
     }
 
     // MARK: IBActions
