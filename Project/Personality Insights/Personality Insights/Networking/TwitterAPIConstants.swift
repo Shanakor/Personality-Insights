@@ -5,7 +5,7 @@
 
 import Foundation
 
-class TwitterAPIConstants {
+struct TwitterAPIConstants {
 
     // I am openly displaying those keys in GitHub, as I do not think
     // that much bad can happen with only read access.

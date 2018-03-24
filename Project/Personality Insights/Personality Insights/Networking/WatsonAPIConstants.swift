@@ -5,7 +5,7 @@
 
 import Foundation
 
-class WatsonAPIConstants {
+struct WatsonAPIConstants {
     struct MetaInfo{
         static let Version = "2018-03-21"
     }

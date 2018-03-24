@@ -5,7 +5,7 @@
 
 import Foundation
 
-class NetworkErrorConstants {
+struct NetworkErrorConstants {
     struct  TweetDownloading{
         static let Title = "Tweet Network Error"
         static let Message = "Something went wrong while download your tweets."

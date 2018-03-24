@@ -8,6 +8,18 @@
 
 import UIKit
 
+enum OnboardingScene: String{
+    case twitterLoginScene = "TwitterLoginScene"
+    case welcomeScene = "WelcomeScene"
+    case policyScene = "PolicyScene"
+    case insightsScene = "InsightsScene"
+}
+
+enum TransitionAnimation{
+    case rightToLeft
+    case leftToRight
+}
+
 class OnboardingViewController: UIViewController, OnboardingNavigationDelegate {
 
     // MARK: Constants
@@ -109,16 +121,4 @@ class OnboardingViewController: UIViewController, OnboardingNavigationDelegate {
 
 protocol OnboardingNavigationDelegate{
     func navigate(from originScene: OnboardingScene, to destinationScene: OnboardingScene, animation: TransitionAnimation?, completion: (() -> Void)?)
-}
-
-enum OnboardingScene: String{
-    case twitterLoginScene = "TwitterLoginScene"
-    case welcomeScene = "WelcomeScene"
-    case policyScene = "PolicyScene"
-    case insightsScene = "InsightsScene"
-}
-
-enum TransitionAnimation{
-    case rightToLeft
-    case leftToRight
 }
