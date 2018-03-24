@@ -36,7 +36,6 @@
 		198E63C42064FD9400DC7E7A /* TwitterAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E63C02064FD9400DC7E7A /* TwitterAPIController.swift */; };
 		198E63C72064FDC200DC7E7A /* CustomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E63C62064FDC200DC7E7A /* CustomTransitionController.swift */; };
 		198E63C92064FDDE00DC7E7A /* NetworkErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198E63C82064FDDE00DC7E7A /* NetworkErrorConstants.swift */; };
-		198E63CA2064FE5F00DC7E7A /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198E639D2064FC5D00DC7E7A /* PersonalityInsightsV3.framework */; };
 		198E63CB2064FE5F00DC7E7A /* PersonalityInsightsV3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 198E639D2064FC5D00DC7E7A /* PersonalityInsightsV3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C9DEFDEF5B53A5935DB54C3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DEF4BD0268B810126CD28 /* UIColorExtension.swift */; };
 		A980C585AB58B235C647F94A /* Pods_Personality_Insights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCF3BC7C6847740A0F286E2 /* Pods_Personality_Insights.framework */; };
@@ -101,7 +100,6 @@
 			files = (
 				A980C585AB58B235C647F94A /* Pods_Personality_Insights.framework in Frameworks */,
 				198E639E2064FC5D00DC7E7A /* PersonalityInsightsV3.framework in Frameworks */,
-				198E63CA2064FE5F00DC7E7A /* PersonalityInsightsV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
