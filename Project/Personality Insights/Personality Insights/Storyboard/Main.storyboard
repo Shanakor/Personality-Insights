@@ -66,7 +66,6 @@
                         <outlet property="policyContainerView" destination="ynT-sl-Z64" id="bTa-vh-w7K"/>
                         <outlet property="twitterLoginContainerView" destination="G3c-OP-HGG" id="p1k-Ev-DPy"/>
                         <outlet property="welcomeContainerView" destination="NT3-Qt-wHz" id="guA-wB-LPD"/>
-                        <segue destination="kHb-Ve-cTd" kind="show" identifier="ShowInsightsVC" id="v4H-H0-98Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

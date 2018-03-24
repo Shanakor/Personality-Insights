@@ -24,11 +24,16 @@ class OnboardingViewController: UIViewController, OnboardingNavigationDelegate {
 
     // MARK: Constants
 
-    struct SegueIdentifiers{
-        static let WelcomeViewController = "EmbedWelcomeVC"
-        static let PolicyViewController = "EmbedPolicyVC"
-        static let TwitterLoginViewController = "EmbedTwitterLoginVC"
-        static let InsightsViewController = "ShowInsightsVC"
+    struct Identifiers {
+        struct Segue {
+            static let WelcomeViewController = "EmbedWelcomeVC"
+            static let PolicyViewController = "EmbedPolicyVC"
+            static let TwitterLoginViewController = "EmbedTwitterLoginVC"
+        }
+
+        struct ViewController{
+            static let InsightsNavigationController = "InsightsNavigationController"
+        }
     }
 
     struct UserDefaultKeys{
@@ -76,13 +81,13 @@ class OnboardingViewController: UIViewController, OnboardingNavigationDelegate {
         }
 
         switch(identifier){
-            case SegueIdentifiers.WelcomeViewController:
+            case Identifiers.Segue.WelcomeViewController:
                 self.welcomeViewController = segue.destination as! WelcomeViewController
                 self.welcomeViewController.navigationDelegate = self
-            case SegueIdentifiers.PolicyViewController:
+            case Identifiers.Segue.PolicyViewController:
                 self.policyViewController = segue.destination as! PolicyViewController
                 self.policyViewController.navigationDelegate = self
-            case SegueIdentifiers.TwitterLoginViewController:
+            case Identifiers.Segue.TwitterLoginViewController:
                 self.twitterLoginViewController = segue.destination as! TwitterLoginViewController
                 self.twitterLoginViewController.navigationDelegate = self
             default:
@@ -99,10 +104,19 @@ class OnboardingViewController: UIViewController, OnboardingNavigationDelegate {
             userDefaults.set(destinationScene.rawValue, forKey: UserDefaultKeys.OnboardingScene)
         }
         else{
-            performSegue(withIdentifier: SegueIdentifiers.InsightsViewController, sender: nil)
             userDefaults.removeObject(forKey: UserDefaultKeys.OnboardingScene)
             userDefaults.set(false, forKey: UserDefaultKeys.OnboardingRequired)
+            presentInsightsViewController()
         }
+    }
+
+    private func presentInsightsViewController() {
+        // For some reason sometimes when I present the ViewController using #presentSegueWithIdentifier it does not work.
+        // I get the warning "attempt to present NavigationController on NavigationController whose view is not in the view hierarchy.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: Identifiers.ViewController.InsightsNavigationController)
+
+        present(vc, animated: true)
     }
 
     private func containerView(matching scene: OnboardingScene) -> UIView?{
