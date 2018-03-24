@@ -20,31 +20,25 @@ class TwitterLoginViewController: UIViewController {
     var navigationDelegate: OnboardingNavigationDelegate?
     private var sessionStore = TWTRTwitter.sharedInstance().sessionStore
     private var logInButton: TWTRLogInButton!
-    private var session: TWTRSession?
 
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        logInButton = TWTRLogInButton(logInCompletion: {
-            session, error in
-
-            self.session = session
-        })
-
+        logInButton = TWTRLogInButton(logInCompletion: loginCompletion)
         stackView.addArrangedSubview(logInButton)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    // MARK: Navigation
 
-        if session != nil{
-            sessionStore.save(session!){
-                session, error in
+    lazy var loginCompletion: TWTRLogInCompletion = {
+        session, error in
 
-                self.navigationDelegate?.navigate(from: .twitterLoginScene, to: .insightsScene, animation: nil, completion: nil)
-            }
+        self.sessionStore.save(session!){
+            session, error in
+
+            self.navigationDelegate?.navigate(from: .twitterLoginScene, to: .insightsScene, animation: nil, completion: nil)
         }
     }
 }
