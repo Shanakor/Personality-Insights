@@ -38,7 +38,9 @@ class TwitterLoginViewController: UIViewController {
         self.sessionStore.save(session!){
             session, error in
 
-            self.navigationDelegate?.navigate(from: .twitterLoginScene, to: .insightsScene, animation: nil, completion: nil)
+            DispatchQueue.main.async {
+                self.navigationDelegate?.navigate(from: .twitterLoginScene, to: .insightsScene, animation: nil, completion: nil)
+            }
         }
     }
 }
